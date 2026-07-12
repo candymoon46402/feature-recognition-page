@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machining Feature Recognition and Parametric Semantics Extraction from STEP Models for Process Planning</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 顶部标题区 -->
+    <div class="header">
+        <h1 class="title">Machining Feature Recognition and Parametric Semantics Extraction from STEP Models for Process Planning</h1>
+        <div class="authors">
+            <span class="author">Wenlong Meng<sup>a</sup></span>
+            <span class="author">Yanchen Wang<sup>a</sup></span>
+            <span class="author">Chang Gao<sup>a</sup></span>
+            <span class="author">Zihe Qin<sup>a</sup></span>
+            <span class="author">Hanlin Liu<sup>a</sup></span>
+            <span class="author">Zhiying Tu<sup>a</sup></span>
+            <span class="author">Dianhui Chu<sup>a</sup></span>
+        </div>
+        <div class="affiliations">
+            <span class="affiliation"><sup>a</sup>Harbin Institute of Technology, Weihai</span>
+        </div>
+        <div class="conference">
+<!--            Conference/journal-->
+        </div>
+
+        <!-- 链接按钮 -->
+        <div class="links">
+            <a href="images/Machining Feature Recognition and Parametric Semantics Extraction from STEP Models for Process Planning.pdf" class="btn" target="_blank">
+                <span>📄</span> PDF
+            </a>
+            <a href="https://arxiv.org/abs/xxxx.xxxxx" class="btn" target="_blank">
+                <span>📑</span> paper
+            </a>
+            <a href="https://github.com/candymoon46402/feature-recognition" class="btn" target="_blank">
+                <span>💻</span> Code
+            </a>
+            <a href="https://youtu.be/_rIt7FKOKIQ" class="btn" target="_blank">
+                <span>🎬</span> video
+            </a>
+        </div>
+    </div>
+
+    <!-- 摘要部分 -->
+    <div class="section">
+        <h2>Abstract</h2>
+        <div class="result-item">
+            <img src="images/teaser.png" alt="Teaser Image">
+        </div>
+        <div class="video-container">
+            <video
+                autoplay
+                muted
+                loop
+                playsinline>
+                <source src="images/video.mp4" type="video/mp4">
+            </video>
+        </div>
+        <p class="abstract-text">
+            In CAD–CAPP–CAM integrated manufacturing, converting STEP models of milling parts into
+            process-planning knowledge is essential but remains challenging. The difficulty arises from both the
+            absence of explicit manufacturing semantics in B-Rep representations and the geometric complexity
+            of milling parts, where slots, pockets and steps may interact, share side faces, disturb concave–convex
+            adjacency, and form irregular boundary profiles. Existing graph- and rule-based methods usually describe
+            manufacturing features using predefined templates or local topological patterns, making them
+            fragile when adjacency attributes are ambiguous or feature regions overlap. This paper proposes a
+            geometry–topology hybrid framework for manufacturing feature recognition and parametric semantics
+            extraction from STEP milling models. The core idea is to infer milling features as machining-oriented
+            regions through the joint reasoning of local geometric variation, topological continuity, and
+            baseline-face spatial constraints. Specifically, local geometric transformations are employed to robustly
+            characterize concave–convex adjacency relationships. Baseline-face-constrained axial projection
+            is further integrated with topological propagation to decompose interacting regions and assign
+            shared faces. Based on the resulting topology, open-chain and closed-loop structures are used as
+            generalized criteria for manufacturing feature classification and machining attribute extraction. Experiments
+            on benchmark and industrial STEP models demonstrate improved recognition robustness
+            and structured outputs for integrated process planning.
+        </p>
+    </div>
+
+    <!-- 视频展示（可选） -->
+    <div class="section">
+        <h2>Introduction</h2>
+        <p class="abstract-text">
+            We introduce a hybrid framework which is developed to transform STEP milling models into
+            process-planning-oriented manufacturing semantics.
+        </p>
+        <div class="video-container">
+            <iframe width="100%" height="100%"
+                src="https://www.youtube.com/embed/_rIt7FKOKIQ?si=Gy5Xq8OrmEXvoOuH"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+        </div>
+        <p class="abstract-text">
+            In past research, automatic feature recognition has been widely studied as an important technique for connecting CAD
+            models with downstream process planning. Graph-based methods represent boundary representation faces as nodes and
+            encode adjacency, convexity, and concavity as graph attributes, providing an interpretable basis for machining feature
+            recognition. Rule-based methods recognize manufacturing features according to predefined geometric and topological
+            conditions, such as surface type, face combination, boundary loop, and machining accessibility. Learning-based
+            methods have recently been developed to reduce dependence on handcrafted rules. However, they still face limitations
+            in robust adjacency judgment, interacting feature decomposition, and parametric semantics extraction. These limitations
+            motivate the proposed geometry–topology hybrid framework for STEP milling models.
+        </p>
+        <div class="result-item">
+            <img src="images/input.png" alt="related works">
+        </div>
+        <div class="result-item">
+            <img src="images/comparison.png" alt="related works">
+        </div>
+        <p class="abstract-text">
+            In this paper, we propose a geometry–topology hybrid framework for manufacturing feature recognition and parametric
+            semantics extraction from STEP models. The core idea is to regard a milling feature as a machining-oriented spatial
+            region jointly constrained by local geometric variation, topological continuity, and baseline-face-related spatial
+            accessibility, rather than as a fixed topological template. Specifically, a local geometric transformation-based
+            method is developed to calculate adjacency attributes by comparing geometric variations before and after offset-like
+            transformations, improving the robustness of concave–convex relationship determination. A baseline-face-constrained
+            axial projection strategy is then introduced to decompose interacting regions and assign shared side faces by
+            analyzing spatial intervals along machining directions. Based on the resulting topology, open-chain and closed-loop
+            structures are used as generalized criteria for classifying regular and irregular milling features. The output includes
+            not only feature categories, but also machining direction, base face, boundary chain, depth, radius, and spatial extent.
+        </p>
+    </div>
+
+    <!-- 实验结果 -->
+    <div class="section">
+        <h2>Results</h2>
+        <p class="abstract-text">
+            Recognition results on simple feature models.
+        </p>
+        <div class="result-item">
+            <img src="images/result1.png" alt="CAD compared">
+        </div>
+        <p class="abstract-text">
+            Recognition results on intersecting feature models.
+        </p>
+        <div class="result-item">
+            <img src="images/result2.png" alt="organic compared">
+        </div>
+        <p class="abstract-text">
+            Recognition results on industrial STEP models.
+        </p>
+        <div class="result-item">
+            <img src="images/result3.png" alt="cwf compared">
+        </div>
+        <p class="abstract-text">
+            Parameter extraction results.
+        </p>
+        <div class="result-item">
+            <img src="images/result4.png" alt="CAD compared">
+        </div>
+
+    </div>
+
+    <!-- BibTeX 引用 -->
+    <div class="section" id="bibtex">
+        <h2>Citation</h2>
+        <p>If our work is helpful to you, please cite it:</p>
+        <pre><code>{}</code></pre>
+    </div>
+
+    <!-- 页脚 -->
+    <div class="footer">
+        <p>© 2026 WangYanchen.  All rights reserved.</p>
+    </div>
+</body>
+</html>
